@@ -34,8 +34,9 @@ if __name__ == "__main__":
     frontend_thread = Thread(target=run_frontend, daemon=True)
 
     backend_thread.start()
-    time.sleep(2)
+    time.sleep(4)
     frontend_thread.start()
 
     backend_thread.join()
+
     frontend_thread.join()
