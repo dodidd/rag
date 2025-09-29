@@ -11,7 +11,7 @@ def run_backend():
         result = subprocess.run([
             sys.executable,  # 使用当前 Python 解释器
             "-m", "uvicorn",  # 以模块方式运行 uvicorn
-            "async:app",  # 指定应用对象（假设文件名为 main.py）
+            "async:app",  # 指定应用对象
             "--host", "127.0.0.1",
             "--port", "5000"
         ], check=True, capture_output=True, text=True)
@@ -40,3 +40,4 @@ if __name__ == "__main__":
     backend_thread.join()
 
     frontend_thread.join()
+
